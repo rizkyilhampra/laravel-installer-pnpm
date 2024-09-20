@@ -439,6 +439,8 @@ class NewCommand extends Command
             )),
         ]);
 
+        touch($directory.'/pnpm-lock.yaml');
+
         $this->runCommands($commands, $input, $output, workingPath: $directory);
 
         $this->commitChanges('Install Breeze', $directory, $input, $output);
